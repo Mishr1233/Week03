@@ -1,11 +1,11 @@
 package org.example.searching.binarysearch;
 
-
 public class TargetValueInMatrix {
 
     public static boolean searchMatrix(int[][] matrix, int target) {
         int rows = matrix.length;
-        if (rows == 0) return false;
+        if (rows == 0)
+            return false;
         int cols = matrix[0].length;
 
         int left = 0, right = rows * cols - 1;
@@ -21,27 +21,27 @@ public class TargetValueInMatrix {
 
             // Compare with the target
             if (midValue == target) {
-                return true;  // Found the target
+                return true; // Found the target
             } else if (midValue < target) {
-                left = mid + 1;  // Search in the right half
+                left = mid + 1; // Search in the right half
             } else {
-                right = mid - 1;  // Search in the left half
+                right = mid - 1; // Search in the left half
             }
         }
 
-        return false;  // Element not found
+        return false; // Element not found
     }
 
     public static void main(String[] args) {
         int[][] matrix = {
-                {1, 4, 7, 11},
-                {2, 5, 8, 12},
-                {3, 6, 9, 16},
-                {10, 13, 14, 17}
+                { 1, 2, 3, 4 },
+                { 5, 6, 7, 8 },
+                { 9, 10, 11, 12 },
+                { 13, 14, 15, 16 }
         };
 
         int target = 5;
         boolean result = searchMatrix(matrix, target);
-        System.out.println("Target found: " + result);  // Output: Target found: true
+        System.out.println("Target found: " + result); // Output: Target found: true
     }
 }
